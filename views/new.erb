@@ -1,0 +1,18 @@
+<form action="/hogwarts" method="POST">
+  <label for="first_name">First name:</label><br>
+  <input type="text" id="first_name" name="first_name"><br>
+  <label for="last_name">Last name:</label><br>
+  <input type="text" id="last_name" name="last_name">
+  <label for="age">Age (between 10 and 18):</label>
+  <input type="number" id="age" name="age" min="10" max="18">
+<select name="house_id" id="house_id">
+<% for house in @houses %>
+<option value="<%=house.id%>">
+  <%=house.name()%>
+</option>
+  <% end %>
+
+</select>
+
+<input type="submit" value="submit">
+</form>
