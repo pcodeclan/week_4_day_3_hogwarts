@@ -41,8 +41,8 @@ class House
         #find by id
     def self.find_by_id(id)
         sql = "SELECT * FROM houses WHERE id = $1"
-        values = [@id]
-        query = SqlRunner.run(sql,values)
+        values = [id]
+        query = SqlRunner.run(sql,values).first
         return nil if query.first == nil
         return House.new(query)
     end

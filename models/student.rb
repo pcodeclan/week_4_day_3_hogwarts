@@ -50,7 +50,7 @@ class Student
     def self.find_by_id(id)
         sql = "SELECT * FROM students WHERE id = $1"
         values = [id]
-        query = SqlRunner.run(sql,values)
+        query = SqlRunner.run(sql,values).first()
         return nil if query.first == nil
         return Student.new(query)
     end
@@ -61,7 +61,7 @@ class Student
     end
         #delete by id
     def self.delete_by_id(id)
-        sql = "DELETE * FROM students WHERE id = $1"
+        sql = "DELETE FROM students WHERE id = $1"
         values = [id]
         query = SqlRunner.run(sql,values)
     end

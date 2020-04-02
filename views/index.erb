@@ -3,4 +3,7 @@
 <% for student in @students %>
 <p>Name: <%= student.first_name()%> <%=student.last_name() %></p>
 <p>House: <%=student.house %></p>
+<p><a href="/hogwarts/<%=student.id%>">Student Details</a></p>
+
+<hr>
 <%end%>

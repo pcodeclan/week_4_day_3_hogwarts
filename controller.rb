@@ -27,3 +27,21 @@ post '/hogwarts' do
   new_student.save()
   redirect('/hogwarts')
 end
+
+#SHOW
+get '/hogwarts/:id' do
+  id = params['id'].to_i
+    @students = Student.find_by_id(id)
+    erb(:show)
+end
+
+# DELETE
+post '/hogwarts/:id/delete' do
+  id = params['id'].to_i
+  Student.delete_by_id(id)
+  redirect('/hogwarts')
+end
+
+#EDIT
+
+get 
